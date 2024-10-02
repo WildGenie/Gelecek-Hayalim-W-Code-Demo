@@ -204,3 +204,100 @@ async def on_message(message):
 client.run(TOKEN)
 ```
 
+### **google-generativeai Nedir?**
+**google-generativeai**, Google'ın Gemini API'sini kullanarak üretken yapay zeka modelleri oluşturmanıza olanak tanıyan bir Python kütüphanesidir. Bu kütüphane, metin, görüntü ve kod gibi çeşitli veri türleri üzerinde çalışabilen çok modlu modeller sunar.
+
+### **Özellikler**
+- **Çok Modlu Modeller**: Metin, görüntü ve kod üzerinde çalışabilen modeller.
+- **Kolay Entegrasyon**: Python SDK ile hızlı ve kolay entegrasyon.
+- **Gelişmiş AI Modelleri**: Google DeepMind tarafından geliştirilen Gemini modellerine erişim.
+
+### **Kurulum**
+google-generativeai kütüphanesini kurmak için aşağıdaki komutu kullanabilirsiniz:
+```bash
+pip install google-generativeai
+```
+
+### **Dökümantasyon**
+google-generativeai hakkında daha fazla bilgi ve detaylı dökümantasyon için aşağıdaki bağlantıları kullanabilirsiniz:
+- **Genel Dökümantasyon**: [Google Generative AI Documentation](https://cloud.google.com/docs/generative-ai)¹
+- **PyPI Sayfası**: [google-generativeai on PyPI](https://pypi.org/project/google-generativeai/)²
+- **Geliştirici Kılavuzu**: [Develop a Generative AI Application](https://cloud.google.com/docs/ai-ml/generative-ai/develop-generative-ai-application)³
+
+### **Gemini API Anahtarı (Token) Oluşturma**
+Google'ın generative AI kütüphanesini kullanmak için bir API anahtarına ihtiyacınız olacak. İşte adım adım nasıl oluşturulacağı:
+
+1. **Google AI Studio'ya Giriş Yapın**
+   - İlk olarak, [Google AI Studio](https://ai.google.dev/gemini-api/docs/api-key) adresine gidin ve Google hesabınızla giriş yapın¹.
+
+2. **Yeni Bir API Anahtarı Oluşturun**
+   - **"Get API key"** butonuna tıklayın.
+   - Yeni bir Google Cloud projesi oluşturabilir veya mevcut bir projeyi seçebilirsiniz.
+   - API anahtarınızı oluşturduktan sonra, anahtarınızı kopyalayın ve güvenli bir yerde saklayın. Bu anahtar, API çağrılarınızı yetkilendirmek için kullanılacaktır².
+
+3. **API Anahtarınızı Güvende Tutun**
+   - API anahtarınızı kimseyle paylaşmayın ve kaynak kontrol sistemlerine dahil etmeyin.
+   - API anahtarınızı kullanırken güvenlik önlemlerini göz önünde bulundurun. Örneğin, anahtarınızı yalnızca gerekli API'lerle sınırlayın².
+
+### **Örnek Kod: Metin Üretimi**
+Aşağıda, Google'ın generative AI kütüphanesini kullanarak basit bir metin üretimi örneği bulunmaktadır:
+
+#### **.env Dosyası**
+Öncelikle, API anahtarınızı saklamak için bir `.env` dosyası oluşturun:
+```
+GEMINI_API_KEY=your-gemini-api-key
+```
+
+#### **Python Kodu**
+Ardından, aşağıdaki Python kodunu kullanarak metin üretimi yapabilirsiniz:
+```python
+import os
+import google.generativeai as genai
+from dotenv import load_dotenv
+
+# .env dosyasındaki değişkenleri yükle
+load_dotenv()
+api_key = os.getenv('GEMINI_API_KEY')
+
+# API anahtarını yapılandır
+genai.configure(api_key=api_key)
+
+# Model oluştur ve prompt gönder
+model = genai.GenerativeModel('gemini-1.5-flash')
+response = model.generate_content("The opposite of hot is")
+
+# Yanıtı yazdır
+print(response.text)
+```
+
+Bu kod, `.env` dosyasındaki API anahtarını kullanarak Google'ın generative AI modeline bağlanır ve verilen prompt'a göre metin üretir.
+
+Tabii ki, işte Discord sohbet botu için bir prompt oluşturma ve kodu dışarı aktarma adımları:
+
+### **Google AI Studio'da Discord Sohbet Botu Prompt Oluşturma**
+
+1. **Google AI Studio'ya Giriş Yapın**
+   - İlk olarak, [Google AI Studio](https://ai.google.dev/aistudio)¹ adresine gidin ve Google hesabınızla giriş yapın.
+
+2. **Yeni Bir Prompt Oluşturun**
+   - Ana sayfada, **"Create new prompt"** butonuna tıklayın.
+   - Açılan pencerede, prompt'unuz için bir isim girin ve **"Create"** butonuna tıklayın.
+
+3. **Prompt İçeriğini Belirleyin**
+   - **System Instructions** bölümünü genişletmek için ok simgesine tıklayın.
+   - Prompt'unuzun içeriğini bu alana yazın. Örneğin, bir Discord sohbet botu oluşturmak için şu şekilde bir içerik ekleyebilirsiniz:
+     ```
+     You are a helpful and friendly Discord bot. Your task is to respond to user messages in a supportive and informative manner.
+     ```
+
+4. **Prompt'u Test Edin**
+   - Prompt'unuzu oluşturduktan sonra, modelle etkileşime geçerek test edebilirsiniz. Bu, modelin verdiği yanıtları görmenizi sağlar ve gerektiğinde prompt'u düzenleyebilirsiniz.
+
+### **Oluşturulan Örneğin Kodlarını Alma**
+
+1. **Kodları Dışa Aktarma**
+   - Prompt'unuzu test ettikten ve memnun kaldıktan sonra, sağ üst köşede bulunan **"Get code"** butonuna tıklayın.
+   - Açılan menüden, kodları hangi programlama dilinde almak istediğinizi seçin (örneğin, Python).
+
+2. **Kodları Kopyalama**
+   - Seçiminizi yaptıktan sonra, oluşturulan kodları kopyalayın ve kendi projenize yapıştırın.
