@@ -113,7 +113,6 @@ cp .env.example .env
   ```bash
   git status
   ```
-Tabii ki, işte discord.py ile ilgili detaylı bilgi ve örnek kod:
 
 ### **discord.py Nedir?**
 **discord.py**, Discord API'sini kullanarak botlar ve diğer uygulamalar oluşturmanıza olanak tanıyan bir Python kütüphanesidir. Modern, kullanımı kolay, özellik açısından zengin ve asenkron programlamaya hazır bir API sarmalayıcıdır.
@@ -135,8 +134,6 @@ discord.py hakkında daha fazla bilgi ve detaylı dökümantasyon için aşağı
 - **Genel Dökümantasyon**: [discord.py Documentation](https://discordpy.readthedocs.io/)
 - **API Referansı**: [API Reference](https://discordpy.readthedocs.io/en/stable/api.html)
 - **Öğrenme Kılavuzu**: [Discord.py Learning Guide](https://www.pythondiscord.com/pages/guides/python-guides/discordpy/)
-
-Tabii ki, işte Discord botu için API anahtarı (token) oluşturma adımları:
 
 ### **Discord Botu İçin API Anahtarı (Token) Oluşturma**
 
@@ -272,8 +269,6 @@ print(response.text)
 
 Bu kod, `.env` dosyasındaki API anahtarını kullanarak Google'ın generative AI modeline bağlanır ve verilen prompt'a göre metin üretir.
 
-Tabii ki, işte Discord sohbet botu için bir prompt oluşturma ve kodu dışarı aktarma adımları:
-
 ### **Google AI Studio'da Discord Sohbet Botu Prompt Oluşturma**
 
 1. **Google AI Studio'ya Giriş Yapın**
@@ -301,3 +296,63 @@ Tabii ki, işte Discord sohbet botu için bir prompt oluşturma ve kodu dışar�
 
 2. **Kodları Kopyalama**
    - Seçiminizi yaptıktan sonra, oluşturulan kodları kopyalayın ve kendi projenize yapıştırın.
+
+### **Streamlit Nedir?**
+**Streamlit**, veri bilimciler ve makine öğrenimi mühendisleri için interaktif veri uygulamaları oluşturmayı kolaylaştıran açık kaynaklı bir Python framework'üdür. Streamlit ile sadece birkaç satır kod yazarak veri uygulamaları oluşturabilirsiniz.
+
+### **Özellikler**
+- **Kolay Kullanım**: Python bilgisi olan herkesin kolayca kullanabileceği bir yapıya sahiptir.
+- **Hızlı Geliştirme**: Hızlı bir şekilde prototip oluşturmanıza olanak tanır.
+- **Interaktif Arayüzler**: Kullanıcı dostu ve interaktif arayüzler oluşturabilirsiniz.
+
+### **Kurulum**
+Streamlit'i kurmak için aşağıdaki komutu kullanabilirsiniz:
+```bash
+pip install streamlit
+```
+
+### **Basit Bir Chat Uygulaması Örneği**
+Aşağıda, Streamlit kullanarak basit bir chat uygulaması oluşturma ve yazılan mesajı geri gönderme örneği bulunmaktadır:
+
+#### **Python Kodu**
+```python
+import streamlit as st
+
+st.title("Echo Bot")
+
+# Sohbet geçmişini başlat
+if "messages" not in st.session_state:
+    st.session_state.messages = []
+
+# Uygulama yeniden çalıştırıldığında sohbet geçmişindeki mesajları göster
+for message in st.session_state.messages:
+    with st.chat_message(message["role"]):
+        st.markdown(message["content"])
+
+# Kullanıcı girdisine tepki ver
+if prompt := st.chat_input("Nasılsınız?"):
+    # Kullanıcı mesajını sohbet mesajı konteynerinde göster
+    st.chat_message("user").markdown(prompt)
+    # Kullanıcı mesajını sohbet geçmişine ekle
+    st.session_state.messages.append({"role": "user", "content": prompt})
+
+    response = f"Echo: {prompt}"
+    # Asistan yanıtını sohbet mesajı konteynerinde göster
+    with st.chat_message("assistant"):
+        st.markdown(response)
+    # Asistan yanıtını sohbet geçmişine ekle
+    st.session_state.messages.append({"role": "assistant", "content": response})
+```
+
+### **Uygulamayı Çalıştırma**
+Bu kodu bir Python dosyasına (örneğin, `app.py`) kaydedin ve ardından terminalde aşağıdaki komutu çalıştırarak uygulamayı başlatın:
+```bash
+streamlit run app.py
+```
+
+
+### **Dökümantasyon**
+Streamlit hakkında daha fazla bilgi ve detaylı dökümantasyon için aşağıdaki bağlantıları kullanabilirsiniz:
+- **Genel Dökümantasyon**: [Streamlit Documentation](https://docs.streamlit.io/)
+- **Öğrenme Kılavuzu**: [Streamlit Tutorials](https://docs.streamlit.io/develop/tutorials)
+- **Örnek Projeler**: [Streamlit Examples](https://github.com/streamlit/cookbook)
