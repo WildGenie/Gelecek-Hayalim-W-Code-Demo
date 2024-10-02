@@ -217,24 +217,24 @@ pip install google-generativeai
 
 ### **Dökümantasyon**
 google-generativeai hakkında daha fazla bilgi ve detaylı dökümantasyon için aşağıdaki bağlantıları kullanabilirsiniz:
-- **Genel Dökümantasyon**: [Google Generative AI Documentation](https://cloud.google.com/docs/generative-ai)¹
-- **PyPI Sayfası**: [google-generativeai on PyPI](https://pypi.org/project/google-generativeai/)²
-- **Geliştirici Kılavuzu**: [Develop a Generative AI Application](https://cloud.google.com/docs/ai-ml/generative-ai/develop-generative-ai-application)³
+- **Genel Dökümantasyon**: [Google Generative AI Documentation](https://cloud.google.com/docs/generative-ai)
+- **PyPI Sayfası**: [google-generativeai on PyPI](https://pypi.org/project/google-generativeai/)
+- **Geliştirici Kılavuzu**: [Develop a Generative AI Application](https://cloud.google.com/docs/ai-ml/generative-ai/develop-generative-ai-application)
 
 ### **Gemini API Anahtarı (Token) Oluşturma**
 Google'ın generative AI kütüphanesini kullanmak için bir API anahtarına ihtiyacınız olacak. İşte adım adım nasıl oluşturulacağı:
 
 1. **Google AI Studio'ya Giriş Yapın**
-   - İlk olarak, [Google AI Studio](https://ai.google.dev/gemini-api/docs/api-key) adresine gidin ve Google hesabınızla giriş yapın¹.
+   - İlk olarak, [Google AI Studio](https://ai.google.dev/gemini-api/docs/api-key) adresine gidin ve Google hesabınızla giriş yapın.
 
 2. **Yeni Bir API Anahtarı Oluşturun**
    - **"Get API key"** butonuna tıklayın.
    - Yeni bir Google Cloud projesi oluşturabilir veya mevcut bir projeyi seçebilirsiniz.
-   - API anahtarınızı oluşturduktan sonra, anahtarınızı kopyalayın ve güvenli bir yerde saklayın. Bu anahtar, API çağrılarınızı yetkilendirmek için kullanılacaktır².
+   - API anahtarınızı oluşturduktan sonra, anahtarınızı kopyalayın ve güvenli bir yerde saklayın. Bu anahtar, API çağrılarınızı yetkilendirmek için kullanılacaktır.
 
 3. **API Anahtarınızı Güvende Tutun**
    - API anahtarınızı kimseyle paylaşmayın ve kaynak kontrol sistemlerine dahil etmeyin.
-   - API anahtarınızı kullanırken güvenlik önlemlerini göz önünde bulundurun. Örneğin, anahtarınızı yalnızca gerekli API'lerle sınırlayın².
+   - API anahtarınızı kullanırken güvenlik önlemlerini göz önünde bulundurun. Örneğin, anahtarınızı yalnızca gerekli API'lerle sınırlayın.
 
 ### **Örnek Kod: Metin Üretimi**
 Aşağıda, Google'ın generative AI kütüphanesini kullanarak basit bir metin üretimi örneği bulunmaktadır:
@@ -272,7 +272,7 @@ Bu kod, `.env` dosyasındaki API anahtarını kullanarak Google'ın generative A
 ### **Google AI Studio'da Discord Sohbet Botu Prompt Oluşturma**
 
 1. **Google AI Studio'ya Giriş Yapın**
-   - İlk olarak, [Google AI Studio](https://ai.google.dev/aistudio)¹ adresine gidin ve Google hesabınızla giriş yapın.
+   - İlk olarak, [Google AI Studio](https://ai.google.dev/aistudio) adresine gidin ve Google hesabınızla giriş yapın.
 
 2. **Yeni Bir Prompt Oluşturun**
    - Ana sayfada, **"Create new prompt"** butonuna tıklayın.
